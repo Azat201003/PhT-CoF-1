@@ -41,9 +41,9 @@ def init_db_if_not_exists(path: str):
             cursor.executemany("INSERT INTO habits (name, is_useful) VALUES (?, ?)", habits_data)
             
             done_data = [
-                (datetime.now(), 1),
-                (datetime.now()-timedelta(minutes=9), 1),
-                (datetime.now()-timedelta(minutes=5), 2)
+                (datetime.now()-timedelta(minutes=0), 1),
+                (datetime.now()-timedelta(minutes=10), 1),
+                (datetime.now()-timedelta(minutes=6), 2)
             ]
             cursor.executemany("INSERT INTO done (time, habit_id) VALUES (?, ?)", done_data)
             
